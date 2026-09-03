@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-background: #f9f9f8;
+  --color-surface: #ffffff;
+  --color-border: #e4e4e0;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-accent: #1e3a5f;
+  --color-accent-light: #eef2f8;
+  --color-accent-hover: #15304f;
+  --color-saffron: #c07b2a;
+  --color-saffron-light: #fdf5eb;
+  --color-citation: #1a5c45;
+  --color-citation-bg: #eaf4f0;
+  --color-citation-border: #b8ddd1;
+  --color-typing: #8b8b8b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Scan line animation */
+@keyframes scanLine {
+  0%   { top: 0%; opacity: 0.9; }
+  100% { top: 100%; opacity: 0.6; }
+}
+
+/* Voice waveform bars */
+@keyframes waveBar {
+  0%, 100% { transform: scaleY(0.35); }
+  50%       { transform: scaleY(1);    }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Chat message entrance — subtle upward drift */
+@keyframes messageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Respect user preference for reduced motion.
+   Collapses duration to near-zero so state changes remain visible
+   (elements still appear/disappear) but motion is eliminated. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

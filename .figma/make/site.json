@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines project requirements and prompts into clear, actionable tasks to enhance team collaboration and project execution efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
